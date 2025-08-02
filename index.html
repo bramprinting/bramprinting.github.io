@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Bram Printing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .app-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .app-card a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .app-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+        .info-card {
+             background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- Header -->
+        <header class="mb-8 text-center">
+            <h1 class="text-5xl font-bold text-gray-900">Portal Aplikasi Bram Printing</h1>
+            <p class="text-xl text-gray-500 mt-3">Pusat kendali untuk semua kebutuhan operasional toko Anda.</p>
+        </header>
+
+        <!-- Bagian Info Cepat -->
+        <section class="mb-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Jam & Tanggal -->
+            <div class="info-card p-6 flex flex-col justify-center items-center text-center bg-gray-800 text-white">
+                 <div id="time" class="text-5xl font-bold">10:30:45</div>
+                 <div id="date" class="text-lg mt-1">Senin, 4 Agustus 2025</div>
+            </div>
+            <!-- Jadwal Hari Ini -->
+            <div class="info-card p-6">
+                <h3 class="font-semibold text-xl mb-4 flex items-center text-gray-800">
+                    <i class="fas fa-users-cog mr-3 text-teal-500"></i>Tim Bertugas Hari Ini
+                </h3>
+                <div id="schedule-container" class="space-y-3">
+                    <!-- Konten jadwal akan dimuat di sini oleh JavaScript -->
+                    <p class="text-gray-500">Memuat jadwal...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid Aplikasi -->
+        <main>
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Semua Aplikasi</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Kartu aplikasi tetap sama -->
+                <div class="app-card"><a href="https://kasir.ctmial9mevzk.work/" target="_blank" rel="noopener noreferrer" class="block p-6"><div class="app-icon bg-green-100 text-green-600 mb-4"><i class="fas fa-cash-register"></i></div><h3 class="text-xl font-semibold mb-2">Aplikasi Kasir</h3><p class="text-gray-500">Manajemen transaksi.</p></a></div>
+                <div class="app-card"><a href="https://dc.ctmial9mevzk.work/" target="_blank" rel="noopener noreferrer" class="block p-6"><div class="app-icon bg-purple-100 text-purple-600 mb-4"><i class="fas fa-drafting-compass"></i></div><h3 class="text-xl font-semibold mb-2">Aplikasi DC</h3><p class="text-gray-500">Kontrol Desain & Produksi.</p></a></div>
+                <div class="app-card"><a href="https://erp.ctmial9mevzk.work/" target="_blank" rel="noopener noreferrer" class="block p-6"><div class="app-icon bg-blue-100 text-blue-600 mb-4"><i class="fas fa-sitemap"></i></div><h3 class="text-xl font-semibold mb-2">Aplikasi ERP</h3><p class="text-gray-500">Sistem terintegrasi.</p></a></div>
+                <div class="app-card"><a href="http://bramprinting.github.io/jadwalemp" target="_blank" rel="noopener noreferrer" class="block p-6"><div class="app-icon bg-cyan-100 text-cyan-600 mb-4"><i class="fas fa-calendar-alt"></i></div><h3 class="text-xl font-semibold mb-2">Jadwal Karyawan</h3><p class="text-gray-500">Pengaturan jadwal kerja.</p></a></div>
+                <div class="app-card"><a href="https://emp.ctmial9mevzk.work/" target="_blank" rel="noopener noreferrer" class="block p-6"><div class="app-icon bg-yellow-100 text-yellow-600 mb-4"><i class="fas fa-user-check"></i></div><h3 class="text-xl font-semibold mb-2">Aplikasi Absen</h3><p class="text-gray-500">Catat kehadiran.</p></a></div>
+                <div class="app-card"><a href="http://bramprinting.github.io/kalkulatorbanner" target="_blank" rel="noopener noreferrer" class="block p-6"><div class="app-icon bg-red-100 text-red-600 mb-4"><i class="fas fa-ruler-horizontal"></i></div><h3 class="text-xl font-semibold mb-2">Kalkulator Banner</h3><p class="text-gray-500">Hitung harga banner.</p></a></div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- KONFIGURASI FIREBASE (diambil dari aplikasi jadwal) ---
+        const firebaseConfig = {
+            apiKey: "AIzaSyA6n_rXmpMt1lTafsV3RwJJJpf_FxINvsw",
+            authDomain: "jadwal-bram.firebaseapp.com",
+            projectId: "jadwal-bram",
+            storageBucket: "jadwal-bram.appspot.com",
+            messagingSenderId: "1067827296315",
+            appId: "1:1067827296315:web:8eab4279f55dd59adf841e",
+            measurementId: "G-GN284W7WH8"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // --- KONSTANTA DARI APLIKASI JADWAL ---
+        const employees = {
+            wanita: [{ id: 'Julia', nama: 'Julia' }, { id: 'Mia', nama: 'Mia' }],
+            pria: [
+                { id: 'Nando', nama: 'Nando', isKepala: true },
+                { id: 'Amin', nama: 'Amin', isKepala: true },
+                { id: 'Qohar', nama: 'Qohar', isKepala: false },
+                { id: 'Adit', nama: 'Adit', isKepala: false }
+            ]
+        };
+        const allEmployees = [...employees.wanita, ...employees.pria];
+        const shifts = {
+            'S1': { time: '06-15', text: '06.00 - 15.00', class: 'bg-sky-100 text-sky-800', startHour: 6 },
+            'S2': { time: '08-17', text: '08.00 - 17.00', class: 'bg-green-100 text-green-800', startHour: 8 },
+            'S3': { time: '11-20', text: '11.00 - 20.00', class: 'bg-amber-100 text-amber-800', startHour: 11 },
+            'S4': { time: '13-22', text: '13.00 - 22.00', class: 'bg-red-100 text-red-800', startHour: 13 },
+            'L':  { time: 'Libur', text: 'Libur', class: 'bg-gray-100 text-gray-800', startHour: 99 },
+            'C':  { time: 'Cuti', text: 'Cuti', class: 'bg-purple-100 text-purple-800', startHour: 99 },
+            'S':  { time: 'Sakit', text: 'Sakit', class: 'bg-yellow-100 text-yellow-800', startHour: 99 },
+            'A':  { time: 'Alfa', text: 'Alfa', class: 'bg-rose-100 text-rose-800', startHour: 99 },
+            'SH': { time: '1/2 Hari', text: '1/2 Hari', class: 'bg-teal-100 text-teal-800', startHour: 98 }
+        };
+
+        // --- FUNGSI JAM & TANGGAL ---
+        function updateClock() {
+            const now = new Date();
+            const timeEl = document.getElementById('time');
+            const dateEl = document.getElementById('date');
+            if (!timeEl || !dateEl) return;
+
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            timeEl.textContent = `${hours}:${minutes}:${seconds}`;
+
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateEl.textContent = now.toLocaleDateString('id-ID', options);
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // --- FUNGSI GENERATE JADWAL (diambil dari aplikasi jadwal) ---
+        function generateSchedule(month, year, leaveData) {
+            const schedule = {};
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            let maleRotationCounter = 0;
+            let maleRotationIndex = 0;
+
+            const getWeekNumber = (d) => {
+                d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+                d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+                const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+                return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+            }
+            const referenceDate = new Date(2025, 7, 3);
+            const referenceWeekNumber = getWeekNumber(referenceDate);
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const date = new Date(year, month, day);
+                const dateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                schedule[dateString] = {};
+
+                allEmployees.forEach(emp => {
+                    if (leaveData[emp.id] && leaveData[emp.id][day]) {
+                        schedule[dateString][emp.id] = leaveData[emp.id][day];
+                    }
+                });
+
+                const workingWomen = employees.wanita.filter(e => !schedule[dateString][e.id]);
+                if (workingWomen.length === 1) {
+                    schedule[dateString][workingWomen[0].id] = 'S1';
+                } else if (workingWomen.length === 2) {
+                    const currentWeekNumber = getWeekNumber(date);
+                    if ((currentWeekNumber % 2) === (referenceWeekNumber % 2)) {
+                        schedule[dateString]['Mia'] = 'S1';
+                        schedule[dateString]['Julia'] = 'S3';
+                    } else {
+                        schedule[dateString]['Julia'] = 'S1';
+                        schedule[dateString]['Mia'] = 'S3';
+                    }
+                }
+
+                const workingMen = employees.pria.filter(e => !schedule[dateString][e.id]);
+                const menOnLeave = employees.pria.filter(e => schedule[dateString][e.id]);
+
+                if (workingMen.length > 0) {
+                    let menToSchedule = [...workingMen];
+                    let assignedShifts = {};
+                    const nandoOnLeave = menOnLeave.some(m => m.id === 'Nando');
+                    const aminOnLeave = menOnLeave.some(m => m.id === 'Amin');
+                    const nandoWorking = menToSchedule.find(m => m.id === 'Nando');
+                    const aminWorking = menToSchedule.find(m => m.id === 'Amin');
+
+                    if (nandoOnLeave && aminWorking) {
+                        assignedShifts['Amin'] = 'S4';
+                        menToSchedule = menToSchedule.filter(m => m.id !== 'Amin');
+                    } else if (aminOnLeave && nandoWorking) {
+                        assignedShifts['Nando'] = 'S4';
+                        menToSchedule = menToSchedule.filter(m => m.id !== 'Nando');
+                    }
+
+                    let requiredShifts = [];
+                    if (menToSchedule.length > 0) requiredShifts.push('S2');
+                    if (menToSchedule.length > 1) requiredShifts.push('S4');
+                    if (menToSchedule.length > 2 && Object.keys(assignedShifts).length === 0) requiredShifts.push('S4');
+                    
+                    if ((employees.pria.length - workingMen.length) !== 1) {
+                        const s3Count = menToSchedule.length - requiredShifts.length;
+                        for(let i = 0; i < s3Count; i++) {
+                            requiredShifts.push('S3');
+                        }
+                    }
+                    
+                    const rotatedMen = [...menToSchedule.slice(maleRotationIndex % (menToSchedule.length || 1)), ...menToSchedule.slice(0, maleRotationIndex % (menToSchedule.length || 1))];
+                    
+                    rotatedMen.forEach(man => {
+                        if (requiredShifts.length > 0) {
+                            assignedShifts[man.id] = requiredShifts.shift();
+                        }
+                    });
+
+                    const checkAndSwap = (p1, p2) => {
+                        if (assignedShifts[p1.id] === 'S2' && assignedShifts[p2.id] !== 'S4') {
+                            const s4HolderId = Object.keys(assignedShifts).find(id => assignedShifts[id] === 'S4' && id !== p1.id);
+                            if (s4HolderId) {
+                                const p2sOriginalShift = assignedShifts[p2.id];
+                                assignedShifts[p2.id] = 'S4';
+                                assignedShifts[s4HolderId] = p2sOriginalShift;
+                            }
+                        }
+                    };
+                    if (nandoWorking && aminWorking) {
+                        checkAndSwap(nandoWorking, aminWorking);
+                        checkAndSwap(aminWorking, nandoWorking);
+                    }
+
+                    Object.assign(schedule[dateString], assignedShifts);
+
+                    maleRotationCounter++;
+                    if (maleRotationCounter >= 2) {
+                        maleRotationCounter = 0;
+                        maleRotationIndex++; 
+                    }
+                }
+            }
+            return schedule;
+        }
+
+
+        // --- FUNGSI MENGAMBIL DAN MENAMPILKAN JADWAL HARI INI ---
+        async function fetchTodaysSchedule() {
+            const scheduleContainer = document.getElementById('schedule-container');
+            if (!db || !scheduleContainer) {
+                scheduleContainer.innerHTML = '<p class="text-red-500">Error: Gagal inisialisasi database.</p>';
+                return;
+            }
+
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth(); // 0-11
+            const day = today.getDate();
+            const todayDateString = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+            const scheduleDocRef = doc(db, "schedules", `BRAM-PRINTING-${year}-${month}`);
+
+            try {
+                const docSnap = await getDoc(scheduleDocRef);
+                let leaveData = {};
+
+                if (docSnap.exists()) {
+                    const { leaveInputs } = docSnap.data();
+                    allEmployees.forEach(emp => {
+                        leaveData[emp.id] = {};
+                        const inputString = leaveInputs[emp.id] || '';
+                        if (inputString) {
+                            const entries = inputString.split(',');
+                            entries.forEach(entry => {
+                                const match = entry.trim().match(/(\d+)\s*(?:\((SH|S|A|C)\))?/i);
+                                if (match) {
+                                    const dayNum = match[1];
+                                    const code = match[2] ? match[2].toUpperCase() : 'L';
+                                    leaveData[emp.id][dayNum] = code;
+                                }
+                            });
+                        }
+                    });
+                }
+
+                const monthlySchedule = generateSchedule(month, year, leaveData);
+                const todaySchedule = monthlySchedule[todayDateString];
+
+                // Proses dan tampilkan data hari ini dengan format baru
+                if (todaySchedule) {
+                    const onDuty = [];
+                    const onLeave = [];
+
+                    allEmployees.forEach(emp => {
+                        const shiftCode = todaySchedule[emp.id] || 'L'; // Anggap libur jika tidak ada jadwal
+                        const shiftInfo = shifts[shiftCode];
+                        
+                        if (['S1', 'S2', 'S3', 'S4', 'SH'].includes(shiftCode)) {
+                            onDuty.push({ name: emp.nama, ...shiftInfo });
+                        } else {
+                            onLeave.push({ name: emp.nama, ...shiftInfo });
+                        }
+                    });
+
+                    // Urutkan karyawan yang bertugas berdasarkan jam masuk
+                    onDuty.sort((a, b) => a.startHour - b.startHour);
+
+                    let htmlContent = '<div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">';
+                    
+                    // Kolom Bertugas
+                    htmlContent += '<div><h4 class="font-semibold text-gray-800 border-b pb-1 mb-2">Bertugas</h4><div class="space-y-2">';
+                    if (onDuty.length > 0) {
+                        onDuty.forEach(emp => {
+                            htmlContent += `<div class="flex justify-between items-center text-sm"><span class="font-medium text-gray-700">${emp.name}</span><span class="font-semibold px-2 py-0.5 rounded-full ${emp.class}">${emp.text}</span></div>`;
+                        });
+                    } else {
+                        htmlContent += '<p class="text-sm text-gray-500">Tidak ada yang bertugas.</p>';
+                    }
+                    htmlContent += '</div></div>';
+
+                    // Kolom Tidak Masuk
+                    htmlContent += '<div><h4 class="font-semibold text-gray-800 border-b pb-1 mb-2">Tidak Masuk</h4><div class="space-y-2">';
+                    if (onLeave.length > 0) {
+                        onLeave.forEach(emp => {
+                            htmlContent += `<div class="flex justify-between items-center text-sm"><span class="font-medium text-gray-700">${emp.name}</span><span class="font-semibold px-2 py-0.5 rounded-full ${emp.class}">${emp.text}</span></div>`;
+                        });
+                    } else {
+                         htmlContent += '<p class="text-sm text-gray-500">Semua karyawan hadir.</p>';
+                    }
+                    htmlContent += '</div></div>';
+
+                    htmlContent += '</div>';
+                    scheduleContainer.innerHTML = htmlContent;
+
+                } else {
+                    scheduleContainer.innerHTML = '<p class="text-gray-500">Jadwal untuk hari ini tidak tersedia.</p>';
+                }
+            } catch (error) {
+                console.error("Error fetching schedule: ", error);
+                scheduleContainer.innerHTML = '<p class="text-red-500">Gagal memuat jadwal. Coba lagi nanti.</p>';
+            }
+        }
+
+        // --- AUTENTIKASI & INISIALISASI ---
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                fetchTodaysSchedule();
+            } else {
+                document.getElementById('schedule-container').innerHTML = '<p class="text-gray-500">Login untuk melihat jadwal.</p>';
+            }
+        });
+
+        async function authenticate() {
+            try {
+                await signInAnonymously(auth);
+            } catch (error) {
+                console.error("Authentication failed: ", error);
+                document.body.innerHTML = `<div class="p-4 text-red-700 bg-red-100 rounded-lg">Error autentikasi. Aplikasi tidak dapat berjalan.</div>`;
+            }
+        }
+        authenticate();
+
+        // --- SCRIPT BUKA LINK DI TAB BARU ---
+        document.querySelectorAll('a').forEach(link => {
+            if(link.target === '_blank'){
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.open(this.href, '_blank');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
